@@ -1,0 +1,23 @@
+<h1>
+  {{Name}}
+</h1>
+
+<p> 
+  {{date | date:"medium"}}
+</p>
+
+<div class="container">
+  Liste...
+  <br>
+  <input type="text" class="input-text" placeholder="Article" [(ngModel)]="todoValue" (keyup.enter)="addItem()">
+  <button class="add-btn" (click)="addItem()">Rajoutez un article</button>
+  <div class="list"> 
+      <ul>
+          <li *ngFor="let item of list">
+              <input type="checkbox" name="isDone" [(ngModel)]="item.isDone">
+            {{item.value}}
+              <button class="btn"(click)="deleteItem(item.id)">Supprimer</button>
+          </li>
+      </ul>    
+  </div>
+</div> 
